@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <title>Welcome to TruckerTab</title>
 </head>
 <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">TruckerTab</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="TruckerTab Logo">
+            <span>TruckerTab</span> <!-- Text next to the logo -->
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,48 +30,45 @@
         </div>
     </nav>
 
-    <!-- Hero section -->
-    <header class="hero bg-light py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1>Welcome to TruckerTab</h1>
-                    <p class="lead">The ultimate expense tracking solution for truck drivers.</p>
-                    <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
-                </div>
-                <div class="col-lg-5">
-                    <img src="path_to_your_hero_image.jpg" alt="Truck Image" class="img-fluid">
-                </div>
+ <!-- Hero section with fadeInUp class for animation -->
+<header class="hero fadeInUp">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1>Welcome to TruckerTab</h1>
+                <p class="lead">The ultimate expense tracking solution for truck drivers.</p>
+                <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Features section -->
-    <section class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="feature bg-primary text-white rounded-circle mb-4">
-                    <i class="icon-truck"></i>
-                </div>
-                <h3>Track Expenses on the Go</h3>
-                <p>Input and categorize expenses with ease, even while on the move.</p>
+<!-- Features section with fadeInUp class for animation on each feature -->
+<section class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4 fadeInUp">
+            <div class="feature bg-primary text-white rounded-circle mb-4">
+                <!-- Feature icon here -->
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="feature bg-primary text-white rounded-circle mb-4">
-                    <i class="icon-receipt"></i>
-                </div>
-                <h3>Receipt Scanning</h3>
-                <p>Use your device's camera to quickly scan and store receipts.</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="feature bg-primary text-white rounded-circle mb-4">
-                    <i class="icon-report"></i>
-                </div>
-                <h3>Generate Reports</h3>
-                <p>Easily generate reports for personal use or tax purposes.</p>
-            </div>
+            <h3>Track Expenses on the Go</h3>
+            <p>Input and categorize expenses with ease, even while on the move.</p>
         </div>
-    </section>
+        <div class="col-md-4 mb-4 fadeInUp">
+            <div class="feature bg-primary text-white rounded-circle mb-4">
+                <!-- Feature icon here -->
+            </div>
+            <h3>Receipt Scanning</h3>
+            <p>Use your device's camera to quickly scan and store receipts.</p>
+        </div>
+        <div class="col-md-4 mb-4 fadeInUp">
+            <div class="feature bg-primary text-white rounded-circle mb-4">
+                <!-- Feature icon here -->
+            </div>
+            <h3>Generate Reports</h3>
+            <p>Easily generate reports for personal use or tax purposes.</p>
+        </div>
+    </div>
+</section>
 
     <!-- Call to action section -->
     <section class="call-to-action bg-primary text-white py-5">
